@@ -90,6 +90,7 @@ module hwpe_stream_fifo #(
   integer       i;
 
   assign flags_o.empty = (cs == EMPTY) ? 1'b1 : 1'b0;
+  assign flags_o.full = (cs == FULL) ? 1'b1 : 1'b0;
 
   // state update
   always_ff @(posedge clk_i, negedge rst_ni)
